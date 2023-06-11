@@ -1,0 +1,77 @@
+  @model Prog.Models.Models.Vm_User
+  
+  <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">update Account</h3></div>
+                                    <div class="card-body">
+                                        <form  action="/admin/home/editusers" method="post"   enctype="multipart/form-data">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" asp-for="Id" hidden type="text" placeholder="Enter your first name" />
+                                                        <input class="form-control" asp-for="Name" type="text" placeholder="Enter your first name" />
+                                                        <label for="inputFirstName">First name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control" asp-for="Family" type="text" placeholder="Enter your last name" />
+                                                        <label for="inputLastName">Last name</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <select class="form-control" asp-for="Status">
+                                                            <option value="True">True</option>
+                                                            <option value="False">False</option>
+                                                        </select>
+                                                        <label for="inputFirstName">status </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control" asp-for="Age" type="number" placeholder="enter your age" />
+                                                        <label for="inputEmail">age</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <img src="/fileupload/@Model.Avatar" alt="" width="50px" srcset="">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input  class="form-control btn btn-dark" asp-for="Img" type="file"  />
+                                                        <label for="inputImage">Avatar</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" asp-for="Password" type="password" placeholder="Create a password" />
+                                                        <label for="inputPassword">Password</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" asp-for="Re_Password" type="password" placeholder="Confirm password" />
+                                                        <label for="inputPasswordConfirm">Confirm Password</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">update Account</a></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>

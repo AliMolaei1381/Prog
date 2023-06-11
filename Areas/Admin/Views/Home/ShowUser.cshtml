@@ -1,0 +1,47 @@
+
+
+<table class="m-3 p-3 text-center table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Name</th>
+      <th scope="col">Family</th>
+      <th scope="col">Age</th>
+      <th scope="col">Password</th>
+      <th scope="col">Avatar</th>
+      <th scope="col">Status</th>
+       <th scope="col">Function</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+   @if (@ViewBag.user != null)
+   {
+    int i = 1;
+      foreach(var item in @ViewBag.user)
+      {
+        <tr>
+            <th>@i</th>
+              <td>@item.Name</td>
+              <td>@item.Family</td>
+              <td>@item.Age</td>
+              <td>@item.Password</td>
+              <td>@item.Status</td>
+              <td>
+                <img src="/fileupload/@item.Avatar" width="70px"> 
+              </td>
+              <td>
+                <a class="btn btn-danger" href="/admin/home/userdelete/@item.Id">delet</a>
+                <a class="btn btn-dark" href="/admin/home/userstatus/@item.Id">status</a>
+                <a class="btn btn-info" href="/admin/home/edituser/@item.Id">edit</a>
+              </td>
+        </tr>
+        i++;
+      }
+    
+   }
+
+   <hr>
+    <a class="btn btn-info d-block" href="/admin/home/adduser">add user</a>
+  </tbody>
+</table>
